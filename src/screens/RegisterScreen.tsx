@@ -88,9 +88,9 @@ const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#f5f6fa', padding: 20 },
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 5, color: '#2f3640' },
   subtitle: { fontSize: 14, marginBottom: 20, color: '#718093' },
-  errorText: { color: '#e84118', marginBottom: 15, fontWeight: '600', textAlign: 'center' },
+  errorText: { color: '#720404', marginBottom: 15, fontWeight: '600', textAlign: 'center' },
   input: { width: '100%', height: 50, backgroundColor: '#fff', borderWidth: 1, borderColor: '#dcdde1', borderRadius: 8, paddingHorizontal: 15, marginBottom: 15 },
-  button: { width: '100%', height: 50, backgroundColor: '#e84118', justifyContent: 'center', alignItems: 'center', borderRadius: 8, marginBottom: 10 },
+  button: { width: '100%', height: 50, backgroundColor: '#720404', justifyContent: 'center', alignItems: 'center', borderRadius: 8, marginBottom: 10 },
   buttonText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
   backButton: { marginTop: 10 },
   backButtonText: { color: '#718093', fontSize: 14, fontWeight: '600' }

@@ -30,6 +30,12 @@ export default function App() {
     setCart([]);
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setCart([]);
+    setCurrentScreen('catalog');
+  };
+
   if (!isLoggedIn) {
     if (authView === 'register') {
       return (
@@ -65,11 +71,13 @@ export default function App() {
             onUpdateCart={(updatedCart) => setCart(updatedCart)} 
             onGoToOrder={() => setCurrentScreen('order')} 
             onGoToHistory={() => setCurrentScreen('history')} 
+            onLogout={handleLogout} 
           />
         )}
         {currentScreen === 'order' && (
           <OrdenScreen 
             cart={cart} 
+            onUpdateCart={(updatedCart) => setCart(updatedCart)} // <--- AÑADIDO PARA PERMITIR MODIFICAR EL CARRITO AQUÍ TAMBIÉN
             onClearCart={handleClearCart} 
             onSaveOrder={handleSaveOrder} 
           />
