@@ -11,7 +11,7 @@ interface CatalogScreenProps {
     onUpdateCart: (updatedCart: CartItem[]) => void;
     onGoToOrder: () => void;
     onGoToHistory: () => void;
-    onLogout: () => void; // <--- SE AGREGA A LAS PROPS
+    onLogout: () => void;
 }
 
 const SECTIONS = [
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
       alignItems: 'center', 
       paddingHorizontal: 15, 
       paddingBottom: 12,
-      paddingTop: 15, // Reducido ya que el SafeAreaView del App.tsx se encarga del margen
+      paddingTop: 15, 
       backgroundColor: '#fff', 
       borderBottomWidth: 1, 
       borderBottomColor: '#dcdde1' 

@@ -5,8 +5,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 interface Order {
     id: string;
     date: string;
-    items: Array<{ id: string; name: string; price: number; quantity: number }>;
-    total: number;
+    items?: Array<{ id: string; name: string; price: number; quantity: number }>;
+    total: number | string;
 }
 
 export default function HistorialScreen() {
@@ -29,36 +29,39 @@ export default function HistorialScreen() {
         }
     };
     
-return (
-    <View style={styles.container}>
-    <Text style={styles.headerTitle}>Historial de Órdenes</Text>
+    return (
+        <View style={styles.container}>
+            <Text style={styles.headerTitle}>Historial de Órdenes</Text>
 
-    {orders.length === 0 ? (
-        <View style={styles.emptyContainer}>
-        <Text style={styles.emptyText}>No hay órdenes confirmadas anteriormente.</Text>
-        </View>
-        ) : (
-        <FlatList
-        data={orders}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-            <View style={styles.orderCard}>
-            <Text style={styles.orderDate}>Fecha: {item.date}</Text>
-            <View style={styles.divider} />
-            
-            {item.items.map((prod, index) => (
-                <Text key={index} style={styles.productText}>
-                  • {prod.quantity}x {prod.name} - ${(prod.price * prod.quantity).toFixed(2)}
-                </Text>
-            ))}
+            {orders.length === 0 ? (
+                <View style={styles.emptyContainer}>
+                    <Text style={styles.emptyText}>No hay órdenes confirmadas anteriormente.</Text>
+                </View>
+            ) : (
+                <FlatList
+                    data={orders}
+                    keyExtractor={(item, index) => item.id ? item.id.toString() : index.toString()}
+                    renderItem={({ item }) => (
+                        <View style={styles.orderCard}>
+                            <Text style={styles.orderDate}>Fecha: {item.date || 'Desconocida'}</Text>
+                            <View style={styles.divider} />
+                            
+                            {/* Validación segura para evitar que falle si items viene vacío o indefinido */}
+                            {Array.isArray(item.items) && item.items.map((prod, index) => (
+                                <Text key={index} style={styles.productText}>
+                                    • {prod.quantity || 0}x {prod.name || 'Producto'} - ${(Number(prod.price || 0) * Number(prod.quantity || 0)).toFixed(2)}
+                                </Text>
+                            ))}
 
-            <View style={styles.divider} />
-            <Text style={styles.orderTotal}>Total Pagado: ${item.total.toFixed(2)}</Text>
-            </View>
+                            <View style={styles.divider} />
+                            <Text style={styles.orderTotal}>
+                                Total Pagado: ${Number(item.total || 0).toFixed(2)}
+                            </Text>
+                        </View>
+                    )}
+                />
             )}
-        />
-    )}
-    </View>
+        </View>
     );
 }
 
