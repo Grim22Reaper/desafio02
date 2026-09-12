@@ -1,6 +1,6 @@
 # Taqueria Marina
 
-link del video demostrativo: https://drive.google.com/file/d/1Hjshaogi9x2PRH3SNqH0Dg7waCmgYMgz/view?usp=sharing
+link del video demostrativo: https://drive.google.com/file/d/1Hjshaogi9x2PRH3SNqH0Dg7waCmGYmgz/view?usp=sharing
 
 Aplicacion movil desarrollada en React Native con Expo y TypeScript para la gestion de pedidos de una taqueria, disenada como proyecto universitario para la Universidad Don Bosco (UDB).
 
@@ -11,7 +11,7 @@ Taqueria Marina permite a los usuarios registrarse, iniciar sesion, explorar un 
 ## Arquitectura y Estructura del Proyecto
 
 El proyecto esta organizado de manera modular separando la logica de navegacion, las pantallas de la interfaz de usuario y los datos estaticos:
-
+```text
 /
 ├── App.tsx                  # Enrutador principal y manejo de estados globales
 ├── src/
@@ -23,7 +23,7 @@ El proyecto esta organizado de manera modular separando la logica de navegacion,
         ├── CatalogScreen.tsx    # Visualizacion de productos por secciones y control de cantidades
         ├── OrdenScreen.tsx      # Resumen del carrito, calculo de IVA y confirmacion de orden
         └── HistorialScreen.tsx  # Consulta de compras pasadas guardadas localmente
-
+```
 ## Caracteristicas Principales
 
 * Autenticacion Local: Sistema de ingreso para administradores y registro de nuevos usuarios respaldado mediante AsyncStorage.
