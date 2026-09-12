@@ -1,6 +1,6 @@
 # Taqueria Marina
 
-link del video demostrativo: https://drive.google.com/file/d/1Hjshaogi9x2PRH3SNqH0Dg7waCmGYmgz/view?usp=sharing
+link del video demostrativo:[ https://drive.google.com/file/d/1Hjshaogi9x2PRH3SNqH0Dg7waCmGYmgz/view?usp=sharing](https://drive.google.com/file/d/1Hjshaogi9x2PRH3SNqH0Dg7waCmgYMgz/view?usp=sharing)
 
 Aplicacion movil desarrollada en React Native con Expo y TypeScript para la gestion de pedidos de una taqueria, disenada como proyecto universitario para la Universidad Don Bosco (UDB).
 
